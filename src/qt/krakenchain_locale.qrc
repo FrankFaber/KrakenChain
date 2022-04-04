@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/krakenchain_ar.qm</file>
+        <file alias="bg">locale/krakenchain_bg.qm</file>
+        <file alias="de">locale/krakenchain_de.qm</file>
+        <file alias="en">locale/krakenchain_en.qm</file>
+        <file alias="es">locale/krakenchain_es.qm</file>
+        <file alias="fi">locale/krakenchain_fi.qm</file>
+        <file alias="fr">locale/krakenchain_fr.qm</file>
+        <file alias="it">locale/krakenchain_it.qm</file>
+        <file alias="ja">locale/krakenchain_ja.qm</file>
+        <file alias="ko">locale/krakenchain_ko.qm</file>
+        <file alias="nl">locale/krakenchain_nl.qm</file>
+        <file alias="pl">locale/krakenchain_pl.qm</file>
+        <file alias="pt">locale/krakenchain_pt.qm</file>
+        <file alias="ro">locale/krakenchain_ro.qm</file>
+        <file alias="ru">locale/krakenchain_ru.qm</file>
+        <file alias="sk">locale/krakenchain_sk.qm</file>
+        <file alias="th">locale/krakenchain_th.qm</file>
+        <file alias="tr">locale/krakenchain_tr.qm</file>
+        <file alias="vi">locale/krakenchain_vi.qm</file>
+        <file alias="zh_CN">locale/krakenchain_zh_CN.qm</file>
+        <file alias="zh_TW">locale/krakenchain_zh_TW.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=KrakenChain Core
+Comment=KrakenChain P2P Cryptocurrency
+Comment[de]=Verbinde mit dem KrakenChain peer-to-peer Netzwerk
+Comment[fr]=KrakenChain, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=KrakenChain, eşten eşe kriptografik sanal para birimi
+Exec=krakenchain-qt %u
+Terminal=false
+Type=Application
+Icon=krakenchain128
+MimeType=x-scheme-handler/krakenchain;
+Categories=Office;Finance;
+StartupWMClass=KrakenChain-qt

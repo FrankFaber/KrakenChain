@@ -1,0 +1,39 @@
+FROM ubuntu:bionic
+LABEL maintainer="KrakenChain Developers <dev@krakenchain.org>"
+LABEL description="Dockerised KrakenChain"
+
+ARG USER_ID
+ARG GROUP_ID
+ARG TAG
+
+ENV HOME /krakenchain
+
+# add user with specified (or default) user/group ids
+ENV USER_ID ${USER_ID:-1000}
+ENV GROUP_ID ${GROUP_ID:-1000}
+RUN groupadd -g ${GROUP_ID} krakenchain && \
+    useradd -u ${USER_ID} -g krakenchain -s /bin/bash -m -d /krakenchain krakenchain  && \
+    mkdir /krakenchain/.krakenchain && \
+    chown krakenchain:krakenchain -R /krakenchain
+
+RUN apt-get update && \
+    apt-get -y install --no-install-recommends \
+    wget \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mach=$(uname -m) \
+      && case $mach in armv7l) arch="arm-linux-gnueabihf"; ;; aarch64) arch="aarch64-linux-gnu"; ;; x86_64) arch="x86_64-linux-gnu"; ;;  *) echo "ERROR: Machine type $mach not supported."; ;; esac \
+      && wget https://github.com/krakenchainpay/krakenchain/releases/download/v${TAG}/krakenchain-${TAG}-$arch.tar.gz -P /tmp \
+      && tar -xvf /tmp/krakenchain-*.tar.gz -C /tmp/ \
+      && cp /tmp/krakenchain*/bin/*  /usr/local/bin \
+      && rm -rf /tmp/krakenchain* \
+      && chmod a+x /usr/local/bin/*
+
+USER krakenchain
+
+VOLUME ["/krakenchain"]
+
+EXPOSE 52885 9999 62885 62886
+
+WORKDIR /krakenchain
